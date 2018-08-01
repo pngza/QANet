@@ -1,5 +1,7 @@
 import os
 import tensorflow as tf
+import argparse
+import sys
 
 '''
 This file is taken and modified from R-Net by HKUST-KnowComp
@@ -18,7 +20,10 @@ test_file = os.path.join(home, "datasets", "squad", "dev-v1.1.json")
 glove_word_file = os.path.join(home, "datasets", "glove", "glove.840B.300d.txt")
 
 train_dir = "train"
-model_name = "FRC"
+
+# model_name = "FRC"
+model_name = sys.argv[1]
+
 dir_name = os.path.join(train_dir, model_name)
 if not os.path.exists(train_dir):
     os.mkdir(train_dir)
